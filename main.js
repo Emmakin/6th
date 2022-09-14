@@ -3,33 +3,14 @@ var gameContent = ['rock', 'paper', 'scissor'];
 let playerScore = 0;
 let computerScore = 0;
 
+
+//After two days of studing javascript function, loop and arrays better
  function getComputerChoice() {
     return gameContent[Math.floor(Math.random() * gameContent.length)] 
   };
  
-   // function playRound(){
-      
-   //    if (computerSelection === playerSelection){
-   //       console.log("Draw");
-   //    } else if (computerSelection == 'scissor' && playerSelection == 'rock'){
-   //       console.log("You won! rock beats scissor")
-   //    } else if (computerSelection == 'paper' && playerSelection == 'rock'){
-   //       console.log("You lose! paper beats rock")
-   //    } else if (computerSelection == 'rock' && playerSelection == 'scissor'){
-   //       console.log("You lose! rock beats scissor")
-   //    }else if (computerSelection == 'paper' && playerSelection == 'scissor'){
-   //       console.log("You won! scissor beats paper")
-   //    }else if (computerSelection == 'rock' && playerSelection == 'paper'){
-   //       console.log("You won! paper beats rock")
-   //    }else if (computerSelection == 'scissor' && playerSelection == 'paper'){
-   //       console.log("You lose! paper beats rock")
-   //    }
-   //    else {
-   //       console.log("try again")
-   //    } return console.log(`You picked ${playerSelection} and the computer picked ${computerSelection}`)
-   // }; 
 
-   function playRoundEvent() {
+  function playRoundEvent() {
       while(playerScore < 5 || computerScore < 5){
          if(computerSelection == 'scissor' && playerSelection == 'rock' ||
          computerSelection == 'paper' && playerSelection == 'scissor'||
@@ -61,3 +42,26 @@ let computerScore = 0;
   console.log(playRoundEvent());
 
 //   console.log(playRound());
+
+  //My initial approach
+   // function playRound(){
+      
+   //    if (computerSelection === playerSelection){
+   //       console.log("Draw");
+   //    } else if (computerSelection == 'scissor' && playerSelection == 'rock'){
+   //       console.log("You won! rock beats scissor")
+   //    } else if (computerSelection == 'paper' && playerSelection == 'rock'){
+   //       console.log("You lose! paper beats rock")
+   //    } else if (computerSelection == 'rock' && playerSelection == 'scissor'){
+   //       console.log("You lose! rock beats scissor")
+   //    }else if (computerSelection == 'paper' && playerSelection == 'scissor'){
+   //       console.log("You won! scissor beats paper")
+   //    }else if (computerSelection == 'rock' && playerSelection == 'paper'){
+   //       console.log("You won! paper beats rock")
+   //    }else if (computerSelection == 'scissor' && playerSelection == 'paper'){
+   //       console.log("You lose! paper beats rock")
+   //    }
+   //    else {
+   //       console.log("try again")
+   //    } return console.log(`You picked ${playerSelection} and the computer picked ${computerSelection}`)
+   // }; 
