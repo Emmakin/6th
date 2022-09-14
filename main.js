@@ -11,24 +11,26 @@ let computerScore = 0;
  
 
   function playRoundEvent() {
-      while(playerScore < 5 || computerScore < 5){
+      for(computerScore = 0, playerScore = 0; computerScore < 5 || playerScore < 5; computerScore++, playerScore ++){
          if(computerSelection == 'scissor' && playerSelection == 'rock' ||
          computerSelection == 'paper' && playerSelection == 'scissor'||
          computerSelection == 'rock' && playerSelection == 'paper'){
             console.log(`You won! ${playerSelection} beat ${computerSelection}`);
-            console.log(playerScore += 1, computerScore);
+            // console.log(playerScore += 1, computerScore);
       } else if(computerSelection == 'paper' && playerSelection == 'rock' ||
                computerSelection == 'rock' && playerSelection == 'scissor'||
                computerSelection == 'scissor' && playerSelection == 'paper'){
         console.log(`You lost!, ${computerSelection} beat ${playerSelection}`);
-        console.log(playerScore, computerScore += 1); 
+        // console.log(playerScore, computerScore += 1); 
       } else {
          console.log(`Draw!, you and computer picked ${computerSelection}`)
       }
+      
+      console.log(`Your Score:${playerScore}  Computer Score:${computerScore}`)
       console.log(`keep playing`);
-      break;
+    } 
     };
-  }
+  
 
    
 
