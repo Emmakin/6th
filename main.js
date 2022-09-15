@@ -42,7 +42,7 @@ const decider = decide();
       // } else {
       //    console.log(`Draw!, you and computer picked ${computerSelection}`)
       // }
-      
+      console.log
       console.log(`Your Score:${playerScore}  Computer Score:${computerScore}`)
       console.log(`keep playing`);
     } 
