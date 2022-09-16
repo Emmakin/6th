@@ -12,7 +12,7 @@ let computerScore = 0;
  
 
   function playRoundEvent() {
-      for(computerScore = 0, playerScore = 0; computerScore < 5 || playerScore < 5; playerScore, computerScore){
+      for(computerScore = 0, playerScore = 0; computerScore < 5 || playerScore < 5;){
          if(computerSelection == 'scissor' && playerSelection == 'rock' ||
          computerSelection == 'paper' && playerSelection == 'scissor'||
          computerSelection == 'rock' && playerSelection == 'paper'){
