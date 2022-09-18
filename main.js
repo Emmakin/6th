@@ -7,7 +7,7 @@ var gameContent = ['rock', 'paper', 'scissor'];
   };
 
   const computerSelection = getComputerChoice();
-  const playerSelection = "rock";
+  const playerSelection = "paper";
  
 
   function playRoundEvent() {
@@ -19,15 +19,16 @@ var gameContent = ['rock', 'paper', 'scissor'];
          computerSelection == 'rock' && playerSelection == 'paper'){
             console.log(`You won! ${playerSelection} beat ${computerSelection}`);
             console.log(playerScore += 1, computerScore);
-      } else if(computerSelection == 'paper' && playerSelection == 'rock' ||
+      } 
+      if(computerSelection == 'paper' && playerSelection == 'rock' ||
                computerSelection == 'rock' && playerSelection == 'scissor'||
                computerSelection == 'scissor' && playerSelection == 'paper'){
         console.log(`You lost!, ${computerSelection} beat ${playerSelection}`);
         console.log(playerScore, computerScore += 1); 
-      } else {
+      } 
+      else {
          console.log(`Draw!, you and computer picked ${computerSelection}`)
       }
-      console.log
       console.log(`Your Score:${playerScore}  Computer Score:${computerScore}`)
       console.log(`keep playing`); 
 
