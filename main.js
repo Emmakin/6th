@@ -1,7 +1,7 @@
 var gameContent = ['rock', 'paper', 'scissor'];
 
 
-//After 5 days of studing javascript function, loop and arrays better
+//After 1 week of studing javascript function, loop and arrays better
  function getComputerChoice() {
     return gameContent[Math.floor(Math.random() * gameContent.length)] 
   };
@@ -10,7 +10,7 @@ var gameContent = ['rock', 'paper', 'scissor'];
   const playerSelection = "paper";
  
 
-  function playRoundEvent() {
+  function playRound(playerSelection, computerSelection) {
     let playerScore = 0;
     let computerScore = 0;
 
@@ -18,13 +18,13 @@ var gameContent = ['rock', 'paper', 'scissor'];
          computerSelection == 'paper' && playerSelection == 'scissor'||
          computerSelection == 'rock' && playerSelection == 'paper'){
             console.log(`You won! ${playerSelection} beat ${computerSelection}`);
-            console.log(playerScore += 1, computerScore);
+            console.log(playerScore, computerScore);
       } 
       if(computerSelection == 'paper' && playerSelection == 'rock' ||
                computerSelection == 'rock' && playerSelection == 'scissor'||
                computerSelection == 'scissor' && playerSelection == 'paper'){
         console.log(`You lost!, ${computerSelection} beat ${playerSelection}`);
-        console.log(playerScore, computerScore += 1); 
+        console.log(playerScore, computerScore); 
       } 
       else {
          console.log(`Draw!, you and computer picked ${computerSelection}`)
@@ -35,10 +35,16 @@ var gameContent = ['rock', 'paper', 'scissor'];
   
     };
 
+    // function updatePlayerScores{
+
+    // }
+
+  
+
 
     for(let round = 1; round < 5; round++){
       console.log(` Round ${round}`);
-      console.log(playRoundEvent());
+      console.log(playRound());
     }
   
 
