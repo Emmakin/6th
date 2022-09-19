@@ -6,43 +6,42 @@ var gameContent = ['rock', 'paper', 'scissor'];
     return gameContent[Math.floor(Math.random() * gameContent.length)] 
   };
 
-  const computerSelection = getComputerChoice();
-  const playerSelection = "paper";
- 
+  let computerSelection = getComputerChoice();
+  
+  let playerSelection = prompt("Enter Rock, paper or scissor").toLowerCase;
 
-  function playRound(playerSelection, computerSelection) {
-    let playerScore = 0;
-    let computerScore = 0;
+  function playRound(){
+        let playerScore = 0;
+        let computerScore = 0;
 
-         if(computerSelection == 'scissor' && playerSelection == 'rock' ||
+      if(computerSelection == 'scissor' && playerSelection == 'rock' ||
          computerSelection == 'paper' && playerSelection == 'scissor'||
          computerSelection == 'rock' && playerSelection == 'paper'){
             console.log(`You won! ${playerSelection} beat ${computerSelection}`);
-            console.log(playerScore, computerScore);
+            console.log(playerScore++);
       } 
-      if(computerSelection == 'paper' && playerSelection == 'rock' ||
+      else if(computerSelection == 'paper' && playerSelection == 'rock' ||
                computerSelection == 'rock' && playerSelection == 'scissor'||
                computerSelection == 'scissor' && playerSelection == 'paper'){
         console.log(`You lost!, ${computerSelection} beat ${playerSelection}`);
-        console.log(playerScore, computerScore); 
+        console.log(computerScore++); 
       } 
-      else {
+      else(playerSelection === computerSelection){
          console.log(`Draw!, you and computer picked ${computerSelection}`)
       }
       console.log(`Your Score:${playerScore}  Computer Score:${computerScore}`)
       console.log(`keep playing`); 
+      // console.log(updatePlayerScores());
+      };
 
-  
-    };
-
-    // function updatePlayerScores{
-
+    // function updatePlayerScores(){
+        
     // }
 
   
 
 
-    for(let round = 1; round < 5; round++){
+    for(let round = 1; round <= 5; round++){
       console.log(` Round ${round}`);
       console.log(playRound());
     }
