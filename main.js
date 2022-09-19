@@ -34,9 +34,10 @@ var gameContent = ['rock', 'paper', 'scissor'];
       // console.log(updatePlayerScores());
       };
 
-    // function updatePlayerScores(){
-        
-    // }
+    function updatePlayerScores(){
+        let playerWin = winners.filter((items) => item == "player").length;
+        let computerWin = winners.filter((item) => item == "tie").length;
+    }
 
   
 
