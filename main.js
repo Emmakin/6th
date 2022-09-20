@@ -1,55 +1,87 @@
-var gameContent = ['rock', 'paper', 'scissor'];
+const choices = ["rock", "paper", "scissor"];
+const winners =[];
 
+function game(){
+  for (let i = 1; i<= 5; i++){
+    playRound(i);
+  }
+  logwins();
+}
 
-//After 1 week of studing javascript function, loop and arrays better
- function getComputerChoice() {
-    return gameContent[Math.floor(Math.random() * gameContent.length)] 
-  };
+function playRound(round){
+  const playerSelection = playerChoice();
+  const computerSelection = computerChoice();
+  const winner = checkWinner(playerSelection, computerSelection);
+  winners.push(winner);
+  logRound(playerSelection, computerSelection, winner, round);
+}
 
-  let computerSelection = getComputerChoice();
-  
-  let playerSelection = prompt("Enter Rock, paper or scissor").toLowerCase;
-
-  function playRound(){
-        let playerScore = 0;
-        let computerScore = 0;
-
-      if(computerSelection == 'scissor' && playerSelection == 'rock' ||
-         computerSelection == 'paper' && playerSelection == 'scissor'||
-         computerSelection == 'rock' && playerSelection == 'paper'){
-            console.log(`You won! ${playerSelection} beat ${computerSelection}`);
-            console.log(playerScore++);
-      } 
-      else if(computerSelection == 'paper' && playerSelection == 'rock' ||
-               computerSelection == 'rock' && playerSelection == 'scissor'||
-               computerSelection == 'scissor' && playerSelection == 'paper'){
-        console.log(`You lost!, ${computerSelection} beat ${playerSelection}`);
-        console.log(computerScore++); 
-      } 
-      else(playerSelection === computerSelection){
-         console.log(`Draw!, you and computer picked ${computerSelection}`)
+function playerChoice(){
+  let input = prompt("Type Rock, Paper , or Scissors");
+  while(input == null) {
+    input = prompt("Type Rock, Paper, or Scissors");
+  }
+  input = input.toLowerCase();
+  let check = validateInput(input);
+  while (check == false) {
+    input = prompt(
+      "Type Rock, Paper, or Scissors, Spelling needs to be exact, but capitilization dosent matter"
+    );
+      while (input == null){
+        input = prompt("Type Rock, Paper, or Scissors");
       }
-      console.log(`Your Score:${playerScore}  Computer Score:${computerScore}`)
-      console.log(`keep playing`); 
-      // console.log(updatePlayerScores());
-      };
+      input = input.toLowerCase();
+      check = validateInput(input);
+  }
+  return input
+}
 
-    // function updatePlayerScores(){
-        
-    // }
+function computerChoice(){
+  return choices[Math.floor(Math.random() * choices.length)];
+}
 
+function validateInput(choice){
+  return choices.includes(choice);
+}
+
+
+
+function checkWinner(choiceP, choiceC){
+  if (choiceP === choiceC) {
+    return "Tie";
+  } else if (
+    (choiceP === "rock" && choiceC == "scissors") ||
+    (choiceP === "paper" && choiceC == "rock") ||
+    (choiceC === "scissor" && choiceC == "paper") 
+  ){
+    return "Player";
+  } else {
+    return "Computer";
+  }
+  }
+
+
+function logwins() {
+  let playerwins = winners.filter((item) => item == "Player").length;
+  let computerwins = winners.filter((item) => item == "Computer").length;
+  let ties = winners.filter((item) => item == "Tie").length;
+  console.log("Results:");
+  console.log("Player wins:", playerwins);
+  console.log("Computer wins:", computerwins);
+  console.log("Tie:", ties);
+}  
+
+function logRound(playerChoice, compChoice, winner, round) {
+  console.log("Round:", round);
+  console.log("Player Chose", playerChoice);
+  console.log("Computer Chose:", computerChoice);
+  console.log(winner, "win the Round");
+  console.log(".............................................");
+}
   
-
-
-    for(let round = 1; round <= 5; round++){
-      console.log(` Round ${round}`);
-      console.log(playRound());
-    }
-  
-
    
 
-    // console.log(playRoundEvent());            
+          
       
  
  
