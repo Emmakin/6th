@@ -36,6 +36,7 @@ function playerChoice(){
   return input
 }
 
+
 function computerChoice(){
   return choices[Math.floor(Math.random() * choices.length)];
 }
