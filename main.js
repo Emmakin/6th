@@ -13,13 +13,13 @@ function playRound(round){
   const winner = checkWinner(playerSelection, computerSelection);
   winners.push(winner);
   logRound(playerSelection, computerSelection, winner, round);
-}
+};
 
 function playerChoice(){
   let input = prompt("Type Rock, Paper , or Scissors");
   while(input == null) {
     input = prompt("Type Rock, Paper, or Scissors");
-  }
+  };
   input = input.toLowerCase();
   let check = validateInput(input);
   while (check == false) {
@@ -28,21 +28,21 @@ function playerChoice(){
     );
       while (input == null){
         input = prompt("Type Rock, Paper, or Scissors");
-      }
+      };
       input = input.toLowerCase();
       check = validateInput(input);
-  }
-  return input
-}
+  };
+  return input;
+};
 
 
 function computerChoice(){
   return choices[Math.floor(Math.random() * choices.length)];
-}
+};
 
 function validateInput(choice){
   return choices.includes(choice);
-}
+};
 
 
 
@@ -58,7 +58,7 @@ function checkWinner(choiceP, choiceC){
   } else {
     return "Computer";
   }
-  }
+  };
 
 
 function logwins() {
